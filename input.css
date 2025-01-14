@@ -1,0 +1,33 @@
+#rowinput{
+    height: 30px;
+    width: 100px;
+    border-radius: 3px;
+    margin-left: -160px;
+}
+#createbutton{
+    position: absolute;
+    border-radius: 3px;
+    height: 30px;
+    width: 75px;
+    margin-left: 640px;
+    margin-top: -55px;
+}
+#subtable{
+    position: absolute;
+    margin-left: 460px;
+    border-width: 3px;
+
+
+}
+#stackgenerate{
+    position: absolute;
+    border-radius: 3px;
+    height: 30px;
+    width: 90px;
+    margin-left: 720px;
+    margin-top: -55px;
+}
+#arrivalTime{
+    border-radius: 3px;
+    border-width: 4px;
+}

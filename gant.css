@@ -1,0 +1,46 @@
+#process_container{
+    border-style :groove;
+    border-width: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    margin-top: -20px;
+    border-radius: 3px;
+    
+}
+#ready_queue_container{
+    position: fixed;
+    margin-top: -20px;
+    border-style :groove;
+    border-width: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 3px;
+}
+#process_queue_container{
+    position: relative;
+    margin-top: -20px;
+    border-style :groove;
+    border-width: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+#next_button{
+    position: fixed;
+    margin-top: -182px;
+    margin-left: 0px;
+    border-radius: 3px;
+}
+#tableContainer{
+    position: relative ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+     
+     
+}

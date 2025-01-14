@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling</title>
+    <link rel="stylesheet" href="input.css">
+</head>
+<body>
+    <center><h1 id="heading">CPU Scheduling</h1></center>
+
+    <center><input type="text" placeholder="Number of processes" id="rowinput"></center><br>
+    <button type="submit" id="createbutton" onclick="createtable()">Create</button>
+    <button type="submit" id="stackgenerate" onclick="sendData()">Stack View</button>
+    <div id="tableContainer"></div>
+</body>
+<script>
+    function createtable(){
+        var row = parseInt(document.getElementById("rowinput").value);
+        var maxrow = 10;
+        if (isNaN(row) || row <= 0 || row > maxrow) {
+            alert("Please enter an appropriate number of rows");
+        } else {
+            var tableHTML = "<center><table border='1' id='Table' cellpadding='4'></center>";
+            tableHTML += "<tr>";
+            tableHTML += "<th>Process</th>";
+            tableHTML += "<th>Arrival Time</th>";
+            tableHTML += "<th>Burst Time</th>";
+            tableHTML += "</tr>";
+            for (var i = 0; i < row; i++) {
+                tableHTML += "<tr>";
+                tableHTML += "<td>Process " + (i + 1) + "</td>";
+                tableHTML += "<td><input type='text' style='border-radius:3px;' id='arrivalTime" + i + "'></td>";
+                tableHTML += "<td><input type='text' style='border-radius:3px;' id='burstTime" + i + "'></td>";
+                tableHTML += "</tr>";
+            }
+            tableHTML += "</table>";
+            var tableContainer = document.getElementById("tableContainer");
+            tableContainer.innerHTML = tableHTML;
+        }
+    }
+
+    function sendData() {
+    var table = document.getElementById("Table");
+
+    var column1 = [];
+    var column2 = [];
+
+    for (var i = 1; i < table.rows.length; i++) {
+        var cell1 = table.rows[i].cells[1].querySelector('input').value;
+        var cell2 = table.rows[i].cells[2].querySelector('input').value;
+
+        column1.push(cell1);
+        column2.push(cell2);
+    }
+
+    var url = 'gantt.html?column1=' + encodeURIComponent(JSON.stringify(column1)) +
+              '&column2=' + encodeURIComponent(JSON.stringify(column2));
+
+    window.location.href = url;
+}
+
+
+    // sendData(); // Uncomment this line if you want to call sendData immediately
+</script>
+</html>
